@@ -1,6 +1,6 @@
 {
   "name": "cypress-tutorial-build-todo-starter",
-  "version": "1.0.0",
+  "version": "10.8.0",
   "description": "",
   "main": "index.js",
   "scripts": {
