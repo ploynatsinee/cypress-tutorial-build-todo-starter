@@ -16,7 +16,6 @@
   "dependencies": {
     "axios": "0.19.2",
     "concurrently": "3.6.1",
-    "fsevents": "^2.3.2",
     "json-server": "0.16.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
@@ -25,21 +24,15 @@
   "devDependencies": {
     "babel-core": "6.26.3",
     "babel-loader": "7.1.5",
-    "babel-plugin-transform-object-rest-spread": "6.26.0",
-    "babel-preset-env": "1.7.0",
-    "babel-preset-react": "6.24.1",
-    "css-loader": "0.28.11",
-    "cypress": "^10.8.0",
-    "html-webpack-plugin": "2.30.1",
-    "style-loader": "0.19.1",
-    "webpack": "3.12.0"
-  },
-  "os": [
-    "darwin"
-  ],
-  "files": [
-    "fsevents.d.ts",
-    "fsevents.js",
-    "fsevents.node"
-  ]
+"babel-plugin-transform-object-rest-spread": "6.26.0",
+"babel-preset-env": "1.7.0",
+"babel-preset-react": "6.24.1",
+"css-loader": "0.28.11",
+"html-webpack-plugin": "2.30.1",
+"style-loader": "0.19.1",
+"webpack": "3.12.0"
+},
+"os": [
+"linux"
+]
 }
