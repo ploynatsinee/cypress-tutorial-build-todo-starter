@@ -1,5 +1,3 @@
-import { ContextExclusionPlugin } from "webpack"
-
 describe('input form', () => {
   beforeEach(() => {
     cy.visit('/')
