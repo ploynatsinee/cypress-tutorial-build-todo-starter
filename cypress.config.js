@@ -13,6 +13,7 @@ module.exports = defineConfig({
   module: {
     rules: [{ test: /\.txt$/, use: 'raw-loader' }],
   },
+  mode: 'production',
 });
 
 
