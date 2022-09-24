@@ -15,7 +15,10 @@ describe("input form", () => {
   context("From submission", () => {
     Cypress.on('uncaught:exception', (err) => {
       it.only("Add a new todo on submit", () => {
-      cy.get(".new-todo").type("Buy eggs").type("{enter}");
+        cy.server()
+        cy.get(".new-todo")
+          .type("Buy eggs")
+          .type("{enter}");
     });
     })
     
