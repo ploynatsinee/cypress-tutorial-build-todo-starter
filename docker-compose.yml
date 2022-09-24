@@ -20,15 +20,20 @@ services:
     image: "cypress/included:10.8.0"
     container_name: cypress
     restart: unless-stopped
-    command: "--browser electron"
+    build: 
+      context: ./cypress
+      dockerfile: Dockerfile
     volumes:
       - ./cypress:/cypress
+      - ./e2e/cypress:/cypress/cypress
       - ./cypress.config.js:/cypress.config.js
     networks:
      - app-network
     # hostname: "localhost"
     # domainname: http://localhost:3030/
     hostname: http://localhost:3030/
+    # environment:
+    #   - CYPRESS_baseUrl=http://localhost:3030/
 
 networks:
     app-network:
