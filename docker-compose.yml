@@ -23,9 +23,9 @@ services:
     build: 
       context: ./cypress
       dockerfile: Dockerfile
-    volumes:
+    volumes: 
       - ./cypress:/cypress
-      - ./e2e/cypress:/cypress/cypress
+      # - ./e2e/cypress:/cypress/cypress
       - ./cypress.config.js:/cypress.config.js
     networks:
      - app-network
