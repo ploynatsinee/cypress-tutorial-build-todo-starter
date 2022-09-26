@@ -5,34 +5,34 @@ services:
   web:
     container_name: react-docker
     restart: unless-stopped
+    image: testreact
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - '.:/usr/src/app'
-      - '/usr/src/app/node_modules'
+      - './:/app'
+      - '/app/node_modules'
     ports:
-      - '3030:3030'
+      - '3080:3080'
     networks:
      - app-network
 
   cypress:
     image: "cypress/included:10.8.0"
-    container_name: cypress
-    restart: unless-stopped
+    container_name: cypress-react
+    # restart: unless-stopped
     volumes: 
       - ./cypress:/cypress
       # - ./e2e/cypress:/cypress/cypress
       - ./cypress.config.js:/cypress.config.js
+    environment:
+      - CYPRESS_baseUrl=http://web:3080
+    command: npx cypress run
     networks:
      - app-network
-    # hostname: "localhost"
-    # domainname: http://localhost:3030/
-    hostname: http://localhost:3030/
-    # environment:
-    #   - CYPRESS_baseUrl=http://localhost:3030/
+    depends_on:
+      - web
 
 networks:
     app-network:
         driver: bridge
-  

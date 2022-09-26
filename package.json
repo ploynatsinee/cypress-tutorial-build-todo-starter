@@ -7,7 +7,7 @@
     "build": "webpack",
     "watch": "webpack --watch",
     "serve": "json-server db.json",
-    "dev": "concurrently \"npm run watch\" \"npm run serve\"",
+    "dev": "concurrently \"npm run watch\" \"npm run serve\" \"socat TCP-LISTEN:3080,fork,reuseaddr TCP:localhost:3030\"",
     "cypress": "cypress open"
   },
   "keywords": [],
