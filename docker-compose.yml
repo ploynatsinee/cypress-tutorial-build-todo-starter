@@ -20,10 +20,8 @@ services:
   cypress:
     image: "cypress/included:10.8.0"
     container_name: cypress-react
-    # restart: unless-stopped
     volumes: 
       - ./cypress:/cypress
-      # - ./e2e/cypress:/cypress/cypress
       - ./cypress.config.js:/cypress.config.js
     environment:
       - CYPRESS_baseUrl=http://web:3080
