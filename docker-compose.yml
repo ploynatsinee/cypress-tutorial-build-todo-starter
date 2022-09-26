@@ -20,9 +20,6 @@ services:
     image: "cypress/included:10.8.0"
     container_name: cypress
     restart: unless-stopped
-    build: 
-      context: ./cypress
-      dockerfile: Dockerfile
     volumes: 
       - ./cypress:/cypress
       # - ./e2e/cypress:/cypress/cypress
