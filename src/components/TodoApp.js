@@ -53,6 +53,7 @@ export default class TodoApp extends Component {
   handleTodoSubmit(evt) {
     evt.preventDefault();
     const newTodo = { name: this.state.currentTodo, isComplete: false };
+    
     saveTodo(newTodo)
       .then(({ data }) =>
         this.setState({
@@ -61,6 +62,7 @@ export default class TodoApp extends Component {
         })
       )
       .catch(() => this.setState({ error: true }));
+     
   }
 
   render() {
