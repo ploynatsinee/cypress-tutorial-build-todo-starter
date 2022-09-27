@@ -22,7 +22,7 @@ describe('Smoke tests', () => {
             cy.focused()
               .type(todo.text)
               .type('{enter}')
-  
+    
             cy.wait('@create')
   
             cy.get('.todo-list li')
