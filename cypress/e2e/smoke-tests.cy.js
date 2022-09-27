@@ -25,8 +25,8 @@ describe('Smoke tests', () => {
   
             cy.wait('@create')
   
-            // cy.get('.todo-list li')
-            //   .should('have.length', todo.expectedLength)
+            cy.get('.todo-list li')
+              .should('have.length', todo.expectedLength)
           })
       })
     })
@@ -42,8 +42,8 @@ describe('Smoke tests', () => {
       })
   
       it('Loads existing data from the DB', () => {
-        // cy.get('.todo-list li')
-        //   .should('have.length', 4)
+        cy.get('.todo-list li')
+          .should('have.length', 4)
       })
   
       it('Deletes todos', () => {
