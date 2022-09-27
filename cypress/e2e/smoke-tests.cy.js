@@ -6,7 +6,7 @@ describe("Smoke tests", () => {
   });
 
   context("With no todos", () => {
-    it.only("Save new todos", () => {
+    it("Save new todos", () => {
       const items = [
         { text: "Buy milk", expectedLength: 1 },
         { text: "Buy eggs", expectedLength: 2 },
@@ -14,14 +14,18 @@ describe("Smoke tests", () => {
       ];
       cy.visit("/");
       cy.server();
-      cy.route("POST", "/api/todos").as("create");
+      cy.route("POST", "/api/todos")
+        .as("create");
 
       cy.wrap(items).each((todo) => {
-        cy.focused().type(todo.text).type("{enter}");
+        cy.focused()
+          .type(todo.text)
+          .type("{enter}");
 
         cy.wait("@create");
 
-        cy.get(".todo-list li").should("have.length", todo.expectedLength);
+        cy.get(".todo-list li")
+          .should("have.length", todo.expectedLength);
       });
     });
   });
