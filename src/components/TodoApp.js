@@ -45,7 +45,9 @@ export default class TodoApp extends Component {
       isComplete: !targetTodo.isComplete,
     };
     updateTodo(updated).then(({ data }) => {
-      const todos = this.state.todos.map((t) => (t.id === data.id ? data : t));
+      const todos = this.state.todos.map(
+        t => t.id === data.id ? data : t
+        );
       this.setState({ todos: todos });
     });
   }
