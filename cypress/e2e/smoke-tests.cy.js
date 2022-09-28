@@ -24,6 +24,7 @@ describe('Smoke tests', () => {
               .type('{enter}')
     
             cy.wait('@create')
+
   
             cy.get('.todo-list li')
               .should('have.length', todo.expectedLength)
@@ -89,4 +90,5 @@ describe('Smoke tests', () => {
         })
       })
     })
+        
   })
